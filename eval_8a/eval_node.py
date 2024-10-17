@@ -7,10 +7,10 @@ from rclpy.node import Node
 
 from std_msgs.msg import String
 
-class MinimalPublisher(Node):
+class Oct_16(Node):
 
     def __init__(self):
-        super().__init__('pubroot')
+        super().__init__('eval_node')
         self.publisher_ = self.create_publisher(String, 'jagveer', 10)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
@@ -27,9 +27,9 @@ def main(args=None):
     rclpy.init()
 
     try:
-        minimal_publisher = MinimalPublisher()
+        oct_16 = Oct_16()
 
-        rclpy.spin(minimal_publisher)
+        rclpy.spin(oct_16)
     except KeyboardInterrupt:
         pass
     except ExternalShutdownException:
